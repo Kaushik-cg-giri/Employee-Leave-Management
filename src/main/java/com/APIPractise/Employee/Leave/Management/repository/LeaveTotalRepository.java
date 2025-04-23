@@ -1,0 +1,16 @@
+package com.APIPractise.Employee.Leave.Management.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.APIPractise.Employee.Leave.Management.entities.LeaveCount;
+
+@Repository
+public interface LeaveTotalRepository extends JpaRepository<LeaveCount, Integer> {
+	
+	@Query(value = "SELECT * FROM LEAVE_COUNT WHERE EMPLOYEE_ID= :employeeId AND LEAVE_TYPE= :leaveType",nativeQuery = true)
+	LeaveCount findTotalLeaveByType(@Param("employeeId") String empID,@Param("leaveType") String type);
+
+}
