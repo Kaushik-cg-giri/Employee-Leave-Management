@@ -24,11 +24,9 @@ public class LeaveService {
 	
 	public Response leaveApplyService(LeaveRequest request) {
 		
-		System.out.println("welcome service layer");
-		
 		LeaveCount leaveDtls = repo.findTotalLeaveByType(request.getEmployeeId(),request.getLeaveType());
 		
-		
+		System.out.println("service layer");
 		
 		int balanceLeaveAfterApply = leaveDtls.gettotalLeave() - request.getDaysRequested();
 		
