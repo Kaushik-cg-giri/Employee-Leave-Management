@@ -17,6 +17,7 @@ public class LeaveController {
 	
 	@Autowired
 	private LeaveService service;
+	System.out.println("check how to pull these print statemnt");
 	
 	@PostMapping("/apply")
 	public Response leaveApply(@RequestBody LeaveRequest request) {
@@ -24,5 +25,5 @@ public class LeaveController {
 		return service.leaveApplyService(request);
 	}
 
-	System.out.println("check how to pull these print statemnt");
+	
 }
