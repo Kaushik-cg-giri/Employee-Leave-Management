@@ -1,5 +1,6 @@
 package com.practise.employee.attendence.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -23,14 +24,14 @@ public class Attendance {
 	@JoinColumn(name = "emp_Id")
 	private Employees employee;
 	
-	private LocalDateTime attendanceDate;
+	private LocalDate attendanceDate;
 	private LocalDateTime checkInTime;
 	private LocalDateTime checkOutTime;
 	private String status;
 	public Attendance() {
 		super();
 	}
-	public Attendance(long attendanceId, Employees employee, LocalDateTime attendanceDate, LocalDateTime checkInTime, LocalDateTime checkOutTime,
+	public Attendance(long attendanceId, Employees employee, LocalDate attendanceDate, LocalDateTime checkInTime, LocalDateTime checkOutTime,
 			String status) {
 		super();
 		this.attendanceId = attendanceId;
@@ -52,10 +53,10 @@ public class Attendance {
 	public void setEmployee(Employees employee) {
 		this.employee = employee;
 	}
-	public LocalDateTime getAttendanceDate() {
+	public LocalDate getAttendanceDate() {
 		return attendanceDate;
 	}
-	public void setAttendanceDate(LocalDateTime attendanceDate) {
+	public void setAttendanceDate(LocalDate attendanceDate) {
 		this.attendanceDate = attendanceDate;
 	}
 	public LocalDateTime getCheckInTime() {
