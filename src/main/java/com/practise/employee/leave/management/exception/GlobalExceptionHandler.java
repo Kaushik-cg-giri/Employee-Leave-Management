@@ -1,4 +1,4 @@
-package com.APIPractise.Employee.Leave.Management.Exception;
+package com.practise.employee.leave.management.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

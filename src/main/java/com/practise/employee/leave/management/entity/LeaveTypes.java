@@ -1,4 +1,4 @@
-package com.APIPractise.Employee.Leave.Management.entities;
+package com.practise.employee.leave.management.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,15 +1,15 @@
-package com.APIPractise.Employee.Leave.Management.service;
+package com.practise.employee.leave.management.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.APIPractise.Employee.Leave.Management.Exception.LeaveException;
-import com.APIPractise.Employee.Leave.Management.entities.InsufficientResponse;
-import com.APIPractise.Employee.Leave.Management.entities.LeaveCount;
-import com.APIPractise.Employee.Leave.Management.entities.LeaveRequest;
-import com.APIPractise.Employee.Leave.Management.entities.LeaveResponse;
-import com.APIPractise.Employee.Leave.Management.entities.Response;
-import com.APIPractise.Employee.Leave.Management.repository.LeaveTotalRepository;
+import com.practise.employee.leave.management.entity.InsufficientResponse;
+import com.practise.employee.leave.management.entity.LeaveCount;
+import com.practise.employee.leave.management.entity.LeaveRequest;
+import com.practise.employee.leave.management.entity.LeaveResponse;
+import com.practise.employee.leave.management.entity.Response;
+import com.practise.employee.leave.management.exception.LeaveException;
+import com.practise.employee.leave.management.repository.LeaveTotalRepository;
 
 @Service
 public class LeaveService {
