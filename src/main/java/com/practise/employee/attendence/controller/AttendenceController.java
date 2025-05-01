@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.practise.employee.attendence.model.CheckInResponse;
+import com.practise.employee.attendence.model.CheckOutResponse;
 import com.practise.employee.attendence.service.AttendenceService;
 
 @RestController
@@ -19,6 +20,11 @@ public class AttendenceController {
 	@PostMapping("checkin/{empId}")
 	public CheckInResponse employeeCheckIn(@PathVariable("empId") String empId) {
 		return service.employeeCheckInTime(empId);
+	}
+	
+	@PostMapping("checkout/{empId}")
+	public CheckOutResponse employeeCheckOut(@PathVariable String empId) {
+		return service.employeeCheckOutTime(empId);
 	}
 
 }

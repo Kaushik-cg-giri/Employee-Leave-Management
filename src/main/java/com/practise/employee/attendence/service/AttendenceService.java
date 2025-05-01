@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.practise.employee.attendence.entity.Attendance;
 import com.practise.employee.attendence.model.CheckInResponse;
+import com.practise.employee.attendence.model.CheckOutResponse;
 import com.practise.employee.attendence.repository.AttendenceRepository;
 import com.practise.employee.leave.management.entity.Employees;
 import com.practise.employee.leave.management.repository.EmployeeRepository;
@@ -40,6 +41,22 @@ public class AttendenceService {
 		response.setCheckInTime(attendance.getCheckInTime());
 		response.setStatus("Pending Checkout");
 		
+		return response;
+	}
+
+	public CheckOutResponse employeeCheckOutTime(String empId) {
+		CheckOutResponse response = new CheckOutResponse();
+		Employees employee = emploeeRepo.findById(empId).orElseThrow();
+		Attendance attendance = attendanceRepo.findByEmployeeEmpIdAndAttendanceDate(empId, LocalDate.now());
+		attendance.setcheckOutTime(LocalDateTime.now());
+		attendance.setStatus("Present");
+		attendanceRepo.save(attendance);
+		
+		response.setMessage("Check-out successful");
+		response.setEmployeeId(empId);
+		response.setcheckOutTime(LocalDateTime.now());
+		response.setStatus("Present");
+
 		return response;
 	}
 
