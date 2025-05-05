@@ -15,4 +15,6 @@ public interface AttendenceRepository extends JpaRepository<Attendance, Long> {
 	
 	//@Query(value = "SELECT * FROM ATTENDANCE WHERE EMP_ID =:empId AND ATTENDANCE_DATE =:attendancedate",nativeQuery = true)
 	Attendance findByEmployeeEmpIdAndAttendanceDate(String empId,LocalDate date);
+	List<Attendance> findByEmployeeEmpId(String empId);
+	List<Attendance> findByAttendanceDate(LocalDate date);
 }

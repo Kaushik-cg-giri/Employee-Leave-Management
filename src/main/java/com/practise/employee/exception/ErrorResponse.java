@@ -1,4 +1,4 @@
-package com.practise.employee.leave.management.exception;
+package com.practise.employee.exception;
 
 public class ErrorResponse {
 	

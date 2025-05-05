@@ -3,28 +3,36 @@ package com.practise.employee.attendence.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class AttendenceResponse {
-
-	private LocalDate date;
+public class AttendenceTodayResponse {
+	
+	private String empId;
+	private String empName;
 	private LocalDateTime checkInTime;
 	private LocalDateTime checkOutTime;
 	private String status;
-	public AttendenceResponse() {
+	public AttendenceTodayResponse() {
 		super();
 	}
-	public AttendenceResponse(LocalDate date, LocalDateTime checkInTime, LocalDateTime checkOutTime,
+	public AttendenceTodayResponse(String empId, String empName, LocalDateTime checkInTime, LocalDateTime checkOutTime,
 			String status) {
 		super();
-		this.date = date;
+		this.empId = empId;
+		this.empName = empName;
 		this.checkInTime = checkInTime;
 		this.checkOutTime = checkOutTime;
 		this.status = status;
 	}
-	public LocalDate getDate() {
-		return date;
+	public String getEmpId() {
+		return empId;
 	}
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setEmpId(String empId) {
+		this.empId = empId;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
 	}
 	public LocalDateTime getCheckInTime() {
 		return checkInTime;
@@ -46,4 +54,5 @@ public class AttendenceResponse {
 	}
 	
 	
+
 }

@@ -3,12 +3,12 @@ package com.practise.employee.leave.management.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.practise.employee.exception.LeaveException;
 import com.practise.employee.leave.management.entity.InsufficientResponse;
 import com.practise.employee.leave.management.entity.LeaveCount;
 import com.practise.employee.leave.management.entity.LeaveRequest;
 import com.practise.employee.leave.management.entity.LeaveResponse;
 import com.practise.employee.leave.management.entity.Response;
-import com.practise.employee.leave.management.exception.LeaveException;
 import com.practise.employee.leave.management.repository.LeaveTotalRepository;
 
 @Service
