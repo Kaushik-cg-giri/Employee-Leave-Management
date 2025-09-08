@@ -10,7 +10,7 @@ import com.practise.employee.leave.management.entity.LeaveCount;
 @Repository
 public interface LeaveTotalRepository extends JpaRepository<LeaveCount, Integer> {
 	
-	@Query(value = "SELECT * FROM LEAVE_COUNT WHERE EMPLOYEE_ID= :employeeId AND LEAVE_TYPE= :leaveType",nativeQuery = true)
+	@Query(value = "select * from leave_count where employee_id= :employeeId and leave_type= :leaveType",nativeQuery = true)
 	LeaveCount findTotalLeaveByType(@Param("employeeId") String empID,@Param("leaveType") String type);
 
 }

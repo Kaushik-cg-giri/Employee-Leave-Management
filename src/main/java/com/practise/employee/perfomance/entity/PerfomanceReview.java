@@ -4,37 +4,45 @@ import java.time.LocalDate;
 
 import com.practise.employee.leave.management.entity.Employees;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 
 @Entity
+@Table(name = "perfomance_review")
 public class PerfomanceReview {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "review_id")
 	private long reviewId;
 	@ManyToOne
 	@JoinColumn(name = "employee_Id")
 	private Employees employee;
+	@Column(name ="review_date")
 	private LocalDate reviewDate;
+	@Column(name ="rating")
 	private float rating;
 	private String comments;
-	private String managerId;
+	@ManyToOne
+	@JoinColumn(name = "manager_id")
+	private Manager manager;
 	public PerfomanceReview() {
 		super();
 	}
 	public PerfomanceReview(Employees employee, LocalDate reviewDate, float rating, String comments,
-			String managerId) {
+			Manager manager) {
 		super();
 		this.employee = employee;
 		this.reviewDate = reviewDate;
 		this.rating = rating;
 		this.comments = comments;
-		this.managerId = managerId;
+		this.manager = manager;
 	}
 	public long getReviewId() {
 		return reviewId;
@@ -66,11 +74,11 @@ public class PerfomanceReview {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
-	public String getManagerId() {
-		return managerId;
+	public Manager  getManager() {
+		return manager;
 	}
-	public void setManagerId(String managerId) {
-		this.managerId = managerId;
+	public void setManagerId(Manager manager) {
+		this.manager = manager;
 	}
 	
 	

@@ -1,18 +1,25 @@
 package com.practise.employee.leave.management.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="leave_count")
 public class LeaveCount {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name ="leave_id")
 	private Integer leaveId;
+	@Column(name = "employee_id")
 	private String employeeId;
+	@Column(name ="leave_type")
 	private String leaveType;
+	@Column(name = "total_leave")
 	private int totalLeave;
 	
 	public LeaveCount() {

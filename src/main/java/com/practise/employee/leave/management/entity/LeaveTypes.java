@@ -1,13 +1,18 @@
 package com.practise.employee.leave.management.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "leave_types")
 public class LeaveTypes {
 
 	@Id
+	@Column(name = "leave_type")
 	private String leaveType;
+	@Column(name = "leave_disc")
 	private String leaveDisc;
 	
 	public LeaveTypes() {

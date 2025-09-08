@@ -89,8 +89,8 @@ public class AttendenceService {
 		List<Attendance> attendances = attendanceRepo.findByAttendanceDate(LocalDate.now());
 		List<AttendenceTodayResponse> list = new ArrayList<AttendenceTodayResponse>();
 		
-		if(list.isEmpty())
-			throw new AttendenceNotFound("Attendence Not found");
+		if(attendances.isEmpty())
+			throw new AttendenceNotFound("No attendence found in this day");
 		
 		for(Attendance itr :attendances) {
 			AttendenceTodayResponse response = new AttendenceTodayResponse();

@@ -44,6 +44,12 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<ErrorResponse>(response,HttpStatus.NOT_FOUND);
 	}
 	
+	@ExceptionHandler(value=NoPerfomanceReviewFound.class)
+	public ResponseEntity<ErrorResponse> perfomanceReviewNotFound(NoPerfomanceReviewFound ex){
+		ErrorResponse response = new ErrorResponse(false, ex.getMessage());
+		return new ResponseEntity<ErrorResponse>(response, HttpStatus.NOT_FOUND);
+	}
+	
 	@ExceptionHandler(PerfomanceRatingNotSuitable.class)
 	public ResponseEntity<ErrorResponse> reviewExceptionHandler(PerfomanceRatingNotSuitable ex){
 		ErrorResponse response = new ErrorResponse(false,ex.getMessage());

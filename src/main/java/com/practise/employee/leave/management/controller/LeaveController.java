@@ -1,6 +1,9 @@
 package com.practise.employee.leave.management.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +23,9 @@ public class LeaveController {
 	
 	
 	@PostMapping("/apply")
-	public Response leaveApply(@RequestBody LeaveRequest request) {
+	public ResponseEntity<Response> leaveApply(@RequestBody LeaveRequest request) {
 		
-		return service.leaveApplyService(request);
+		return new ResponseEntity<Response>(service.leaveApplyService(request),HttpStatus.CREATED);
 	}
 
 	
